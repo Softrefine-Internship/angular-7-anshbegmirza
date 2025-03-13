@@ -1,0 +1,29 @@
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+.help-block {
+  color: rgb(255, 65, 65);
+}
+
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+  border: 1px solid #ff4141;
+}
+
+label {
+  cursor: pointer;
+}
+
+.form-check-input {
+  margin-left: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+// To remove those arrows from number input
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

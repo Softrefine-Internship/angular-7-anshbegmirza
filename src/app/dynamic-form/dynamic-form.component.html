@@ -1,0 +1,43 @@
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <div *ngFor="let field of formFields">
+    <div class="mb-3" *ngIf="field.isVisible">
+
+      <!-- Label for all input types -->
+      <label *ngIf="field.type !== 'checkbox'" class="form-label">{{ field.label }}</label>
+
+      <!-- Text and Number Inputs -->
+      <input *ngIf="field.type === 'text' || field.type === 'number'" class="form-control" [type]="field.type"
+        [formControlName]="field.label" [placeholder]="field.hint">
+
+      <!-- Textarea -->
+      <textarea *ngIf="field.type === 'textarea'" class="form-control" [formControlName]="field.label"
+        [placeholder]="field.hint"></textarea>
+
+      <!-- Slider Input -->
+      <input *ngIf="field.type === 'slider'" type="range" class="form-range" [formControlName]="field.label" min="1"
+        max="10">
+
+      <!-- Dropdown -->
+      <select *ngIf="field.type === 'dropdown'" class="form-select" [formControlName]="field.label">
+        <option *ngFor="let option of field.options" [value]="option">{{ option }}</option>
+      </select>
+
+      <!-- Checkbox -->
+      <div *ngIf="field.type === 'checkbox'">
+        <label class="form-check-label">{{ field.label }}</label>
+        <input type="checkbox" class="form-check-input" [formControlName]="field.label">
+      </div>
+
+      <!-- Validation Error Message -->
+      <div *ngIf="dynamicForm.get(field.label)?.invalid && dynamicForm.get(field.label)?.touched" class="text-danger">
+        <span class="help-block">*{{ field.errorMessage }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit and Reset buttons -->
+  <button type="submit" class="btn btn-outline-primary" [disabled]="dynamicForm.invalid">Submit</button>
+  |
+  <button type="button" class="btn btn-outline-danger" (click)="onReset()"
+    [disabled]="dynamicForm.invalid">Reset</button>
+</form>
