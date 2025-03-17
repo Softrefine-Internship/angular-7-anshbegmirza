@@ -22,7 +22,7 @@ export class DynamicFormComponent implements OnInit {
     // for text type.
     {
       type: 'text',
-      label: 'Name :',
+      label: 'Name',
       isVisible: true,
       isRequired: true,
       errorMessage: 'Name is required.',
@@ -34,7 +34,7 @@ export class DynamicFormComponent implements OnInit {
     // for number type
     {
       type: 'number',
-      label: 'Age :',
+      label: 'Age',
       isVisible: true,
       isRequired: true,
       errorMessage: 'Age is required.',
@@ -46,7 +46,7 @@ export class DynamicFormComponent implements OnInit {
     // Slider
     {
       type: 'slider',
-      label: 'Your experience level :',
+      label: 'Your experience level',
       isVisible: true,
       isRequired: false,
       errorMessage: '',
@@ -58,7 +58,7 @@ export class DynamicFormComponent implements OnInit {
     // Dropdown
     {
       type: 'dropdown',
-      label: 'Country :',
+      label: 'Country',
       isVisible: true,
       isRequired: true,
       errorMessage: 'Country is required.',
@@ -70,7 +70,7 @@ export class DynamicFormComponent implements OnInit {
     // Checkbox
     {
       type: 'checkbox',
-      label: 'Agree to terms : ',
+      label: 'Agree to terms',
       isVisible: true,
       isRequired: true,
       errorMessage: 'Agree to terms & conditions',
@@ -82,7 +82,7 @@ export class DynamicFormComponent implements OnInit {
     // textarea
     {
       type: 'textarea',
-      label: 'Comments :',
+      label: 'Comments',
       isVisible: true,
       isRequired: false,
       errorMessage: '',
@@ -120,7 +120,7 @@ export class DynamicFormComponent implements OnInit {
   onSubmit() {
     this.dynamicForm.valid
       ? console.log(this.dynamicForm.value)
-      : alert('Please fill the required values');
+      : alert('Please enter all the required values !');
   }
 
   onReset() {

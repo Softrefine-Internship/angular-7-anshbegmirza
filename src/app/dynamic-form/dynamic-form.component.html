@@ -3,7 +3,7 @@
     <div class="mb-3" *ngIf="field.isVisible">
 
       <!-- Label for all input types -->
-      <label *ngIf="field.type !== 'checkbox'" class="form-label">{{ field.label }}</label>
+      <label *ngIf="field.type !== 'checkbox'" class="form-label">{{ field.label }} :</label>
 
       <!-- Text and Number Inputs -->
       <input *ngIf="field.type === 'text' || field.type === 'number'" class="form-control" [type]="field.type"
@@ -24,7 +24,7 @@
 
       <!-- Checkbox -->
       <div *ngIf="field.type === 'checkbox'">
-        <label class="form-check-label">{{ field.label }}</label>
+        <label class="form-check-label">{{ field.label }} :</label>
         <input type="checkbox" class="form-check-input" [formControlName]="field.label">
       </div>
 
